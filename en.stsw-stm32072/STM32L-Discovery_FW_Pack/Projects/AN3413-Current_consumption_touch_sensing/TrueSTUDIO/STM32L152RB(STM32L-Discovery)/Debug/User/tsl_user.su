@@ -1,0 +1,6 @@
+tsl_user.c:222:6:TSL_user_Init	8	static
+tsl_user.c:241:19:TSL_user_Action	16	static
+tsl_user.c:314:6:ProcessSensors	24	static
+tsl_user.c:355:6:ProcessSensorsButtons	16	static
+tsl_user.c:405:6:TSL_user_InitGPIOs	0	static
+tsl_user.c:418:6:TSL_user_SetThresholds	0	static

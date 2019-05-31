@@ -1,0 +1,3 @@
+tsl_acq.c:48:19:TSL_acq_BankGetResult	56	static
+tsl_acq.c:311:6:TSL_acq_BankClearData	20	static
+tsl_acq.c:162:19:TSL_acq_BankCalibrate	56	static

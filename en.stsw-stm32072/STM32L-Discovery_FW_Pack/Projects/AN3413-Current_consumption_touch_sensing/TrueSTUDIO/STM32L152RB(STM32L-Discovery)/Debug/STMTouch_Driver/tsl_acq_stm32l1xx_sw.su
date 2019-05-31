@@ -1,0 +1,15 @@
+tsl_acq_stm32l1xx_sw.c:235:6:TSL_BankConf	12	static
+tsl_acq_stm32l1xx_sw.c:271:19:TSL_acq_Init	48	static
+tsl_acq_stm32l1xx_sw.c:361:19:TSL_acq_BankConfig	48	static
+tsl_acq_stm32l1xx_sw.c:442:6:TSL_acq_GroupDone	12	static
+tsl_acq_stm32l1xx_sw.c:462:6:TSL_acq_BankStartAcq	80	static,ignoring_inline_asm
+tsl_acq_stm32l1xx_sw.c:834:19:TSL_acq_BankWaitEOC	0	static
+tsl_acq_stm32l1xx_sw.c:847:13:TSL_acq_GetMeas	0	static
+tsl_acq_stm32l1xx_sw.c:858:22:TSL_acq_CheckNoise	0	static
+tsl_acq_stm32l1xx_sw.c:869:6:TSL_acq_ProcessIT	0	static
+tsl_acq_stm32l1xx_sw.c:878:17:TSL_acq_UseFilter	0	static
+tsl_acq_stm32l1xx_sw.c:890:14:TSL_acq_ComputeDelta	0	static
+tsl_acq_stm32l1xx_sw.c:902:13:TSL_acq_ComputeMeas	0	static
+tsl_acq_stm32l1xx_sw.c:913:17:TSL_acq_TestReferenceOutOfRange	0	static
+tsl_acq_stm32l1xx_sw.c:925:17:TSL_acq_TestFirstReferenceIsValid	0	static
+tsl_acq_stm32l1xx_sw.c:948:6:SoftDelay	24	static

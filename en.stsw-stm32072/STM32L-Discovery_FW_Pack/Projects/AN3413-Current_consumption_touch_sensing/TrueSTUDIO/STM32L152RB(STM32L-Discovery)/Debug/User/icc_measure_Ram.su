@@ -1,0 +1,7 @@
+icc_measure_Ram.c:52:11:RAM_FLASH_RUNPowerDownCmd.part.0	0	static
+icc_measure_Ram.c:78:11:RAM_PWR_LowPowerRunModeCmd.part.1	0	static
+icc_measure_Ram.c:52:11:RAM_FLASH_RUNPowerDownCmd	0	static
+icc_measure_Ram.c:78:11:RAM_PWR_LowPowerRunModeCmd	0	static
+icc_measure_Ram.c:99:11:EnterLPRUNModeRAM	8	static,ignoring_inline_asm
+icc_measure_Ram.c:130:11:EnterLPSLEEPModeRAM	8	static,ignoring_inline_asm
+icc_measure_Ram.c:169:11:EnterSLEEPModeRAM	8	static,ignoring_inline_asm

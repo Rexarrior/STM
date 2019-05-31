@@ -1,0 +1,11 @@
+icc_measure.c:52:6:GPIO_LowPower_Config	32	static
+icc_measure.c:109:6:Restore_GPIO_Config	16	static
+icc_measure.c:132:6:Config_Systick	24	static
+icc_measure.c:144:6:Config_Systick_50ms	24	static
+icc_measure.c:157:6:SetHSICLKToMSI	24	static
+icc_measure.c:218:6:SetHSICLK	8	static
+icc_measure.c:255:6:ADC_Icc_Init	40	static
+icc_measure.c:301:10:ADC_Supply	32	static
+icc_measure.c:340:6:Config_RCC	0	static
+icc_measure.c:364:10:Current_Measurement	24	static
+icc_measure.c:396:10:ADC_Icc_Test	88	static,ignoring_inline_asm
