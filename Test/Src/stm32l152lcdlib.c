@@ -49,7 +49,8 @@ const uint16_t NumberMap[10]=
 
 static void LCD_Conv_Char_Seg(uint8_t* c, BOOL point, BOOL column,uint8_t* digit);
 static void LCD_GLASS_WriteChar(uint8_t* ch, BOOL point, BOOL column, uint8_t position);
-
+static void custom_delay(int time);
+static void str_slice(char* target_str, char* donor_str, int start, int stop);
 /**
 * @brief  Converts an ascii char to the a LCD digit.
 * @param  c: a char to display.
@@ -264,7 +265,7 @@ void LCD_GLASS_DisplayString(uint8_t* ptr)
 
 
 	/* Send the string character by character on lCD */
-	while ((*ptr != 0) & (i < LCD_CHAR_COUNT))
+	while ((*ptr != 0) & (i <= LCD_CHAR_COUNT))
 	{
 		/* Display one character on LCD */
 		LCD_GLASS_WriteChar(ptr, 0, 0, i);
@@ -291,12 +292,12 @@ void LCD_GLASS_DisplayWholeString(uint8_t* ptr, uint8_t len, uint8_t updateDelay
 {
 	
 	uint8_t offset = 0;
-	while(offset + LCD_CHAR_COUNT < len)
+	while(offset + LCD_CHAR_COUNT < len+1)
 	{
 		LCD_GLASS_DisplayString(ptr);
 		offset++;
 		ptr++;
-		HAL_Delay(updateDelay);
+		custom_delay(updateDelay);
 	}
 	LCD_GLASS_DisplayString(ptr);
 }
@@ -322,8 +323,29 @@ void LCD_GLASS_Tiker(uint8_t* ptr, uint8_t len,  uint8_t updateDelay, uint8_t be
 		if (callback != NULL)
 			if (callback())
 				break;
-		LCD_GLASS_DisplayWholeString(ptr, len, updateDelay);
-		HAL_Delay(betweenMessageDelay);
+	char str[LCD_CHAR_COUNT];
+	uint8_t offset = 0;
+	while(offset + LCD_CHAR_COUNT < len+1)
+	{
+		
+		str_slice(str, (char*)ptr, offset, offset+LCD_CHAR_COUNT);
+		LCD_GLASS_DisplayString((uint8_t*)str);
+		offset++;
+		custom_delay(updateDelay);
+	}
+	custom_delay(betweenMessageDelay);
+	offset  -= 1;
+	for(int i = 1; i < LCD_CHAR_COUNT; i++)
+	{
+		int cnt = LCD_CHAR_COUNT-i;
+		str_slice(str, (char*) ptr, len-cnt, len);
+		str_slice(str + cnt, (char*) ptr, 0, i);
+		LCD_GLASS_DisplayString((uint8_t*)str);
+		custom_delay(updateDelay);
+	}
+	
+	
+		
 	}
 }
 
@@ -386,4 +408,21 @@ void LCD_GLASS_InitController(void)
 	while(!(LCD->SR&LCD_SR_RDY));
 	while(!(LCD->SR&LCD_SR_ENS));
 
+}
+
+
+
+static void custom_delay(int time)
+{
+	int count = 1000 * time; //
+	for(int i = 0; i < count; i++);
+}
+
+
+static void str_slice(char* target_str, char* donor_str, int start, int stop)
+{
+	for (int i = start; i < stop; i++)
+	{
+		target_str[i-start] = donor_str[i];
+	}
 }

@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32L152xC,USE_HAL_DRIVER,STM32L152xC</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc; ../Drivers/STM32L1xx_HAL_Driver/Inc; ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32L1xx/Include; ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;  ../Drivers/STM32L1xx_HAL_Driver/Inc;  ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy;  ../Drivers/CMSIS/Device/ST/STM32L1xx/Include;  ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -390,15 +390,17 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
-        <Group>
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
-              <FileName>stm32l1xx_hal_msp.c</FileName>
+              <FileName>stm32l152lcdlib.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\stm32l152lcdlib.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l152lcdlib.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/stm32l1xx_hal_msp.c</FilePath>
+              <FilePath>..\Src\stm32l152lcdlib.c</FilePath>
             </File>
             <File>
               <FileName>main.c</FileName>
@@ -411,14 +413,9 @@
               <FilePath>../Src/stm32l1xx_it.c</FilePath>
             </File>
             <File>
-              <FileName>stm32l152lcdlib.c</FileName>
+              <FileName>stm32l1xx_hal_msp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Src\stm32l152lcdlib.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l152lcdlib.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Inc\stm32l152lcdlib.h</FilePath>
+              <FilePath>../Src/stm32l1xx_hal_msp.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -506,6 +503,9 @@
               <FilePath>../Src/system_stm32l1xx.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>

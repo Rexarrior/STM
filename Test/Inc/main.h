@@ -30,8 +30,7 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l1xx_hal.h"
 
-
-	/* Private includes ----------------------------------------------------------*/
+/* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stm32l152lcdlib.h"
 #include "stm32l152xc.h"

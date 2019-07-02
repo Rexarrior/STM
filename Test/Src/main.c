@@ -65,57 +65,55 @@ void controller(void);
 /**
   * @brief  The application entry point.
   * @retval int
-//  */
-//int main(void)
-//{
-//  /* USER CODE BEGIN 1 */
+  */
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
 
-//  /* USER CODE END 1 */
-//  
+  /* USER CODE END 1 */
+  
 
-//  /* MCU Configuration--------------------------------------------------------*/
+  /* MCU Configuration--------------------------------------------------------*/
 
-//  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-//  HAL_Init();
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
 
-//  /* USER CODE BEGIN Init */
+  /* USER CODE BEGIN Init */
 
-//  /* USER CODE END Init */
+  /* USER CODE END Init */
 
-//  /* Configure the system clock */
-//  SystemClock_Config();
+  /* Configure the system clock */
+  SystemClock_Config();
 
-//  /* USER CODE BEGIN SysInit */
-
-//  /* USER CODE END SysInit */
-
-//  /* Initialize all configured peripherals */
-//  //MX_GPIO_Init();
-//  //MX_LCD_Init();
-//  /* USER CODE BEGIN 2 */
-
-
-// 
-//  /* USER CODE END 2 */
-
-//  /* Infinite loop */
-//  /* USER CODE BEGIN WHILE */
-//  while (1)
-//  {
-//    /* USER CODE END WHILE */
-
-//    /* USER CODE BEGIN 3 */
-//  }
-//  /* USER CODE END 3 */
-//}
-int main(){
+  /* USER CODE BEGIN SysInit */
 	LCD_GLASS_InitGpio();
 	LCD_GLASS_InitController();
 	
-	char* str = "HABROHABR";
-	LCD_GLASS_DisplayString((uint8_t*)str);
 	
-	while(1);
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  //MX_LCD_Init();
+  /* USER CODE BEGIN 2 */
+
+	HAL_Delay(123);
+	char* str = "1234567890";
+	//LCD_GLASS_DisplayString((uint8_t*)str);
+	//LCD_GLASS_DisplayWholeString((uint8_t*)str, strlen(str), 500);  
+	LCD_GLASS_Tiker((uint8_t*)str, strlen(str), 500, 2000, 0, NULL);  
+// 
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
 }
 
 /**
